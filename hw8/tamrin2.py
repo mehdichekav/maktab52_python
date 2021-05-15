@@ -21,34 +21,22 @@ print('result seconds :', d.days * 86400)
 
 # ------------------------------------- part 2
 
-
-def is_leap_year(year):
-    if year % 400 == 0:
-        result = True
-
-    elif year % 100 == 0:
-        result = False
-
-    elif year % 4 == 0:
-        result = True
-
-    else:
-        result = False
-
-    return result
+def calNum(year):
+    return (year // 4) - (year // 100) + (year // 400)
 
 
+def leapNum(l, r):
+    l -= 1
+    num1 = calNum(r)
+    num2 = calNum(l)
+    print(num1 - num2)
 
 
-if is_leap_year(year1):
-    print(year1, ' is a leap year.')
-else:
-    print(year1, ' is not a leap year.')
+if __name__ == "__main__":
+    l1 = year1
+    r1 = year2
+    leapNum(l1, r1)
 
-# if is_leap_year(year2):
-#     print(year2, ' is a leap year.')
-# else:
-#     print(year2, ' is not a leap year.')
 
 
 # ------------------------------------- part 3
