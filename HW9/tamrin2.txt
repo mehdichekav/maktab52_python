@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Program for Fibonacci
+
+# input fo N
+echo 'enter your number :'
+read N
+
+# First Number
+a=0
+
+# Second Number
+b=1
+
+echo "The Fibonacci series is : "
+
+for (( i=0; i<N; i++ ))
+do
+    echo -n "$a "
+    fn=$((a + b))
+    a=$b
+    b=$fn
+done
+echo '...'
