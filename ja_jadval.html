@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"  rel="stylesheet">
+     <link href="bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script>
+
+        function multi(num) {
+            $('#my_table').html('')
+            num = Number(num);
+            for (let i = 1; i <= num; i++) {
+                let tr_elem=$('<tr></tr>').appendTo('#my-table')
+
+                for (let j = 1; j <= num; j++) {
+
+                      tr_elem.append('<td>${i*j}</td>')
+                 }
+            }
+        }
+
+        $(document).ready(function (){
+
+            $('#num').on('input', function () {
+                multi($(this).val())
+            })
+        })
+
+</script>
+</head>
+<body>
+
+
+    <input id="num" type="number" >
+    <table id="#my_table"></table>
+
+
+
+ </body>
+</html>
